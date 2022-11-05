@@ -1,10 +1,10 @@
 export class Planta {
-  name: string;
+  nombre: string;
   tipo: string;
-  clima: number;
+  clima: string;
  
-  public constructor(name: string, tipo: string, clima: number) {
-    this.name = name;
+  public constructor(nombre: string, tipo: string, clima: string) {
+    this.nombre = nombre;
     this.tipo = tipo;
     this.clima = clima;
   }
