@@ -1,15 +1,19 @@
 <div class="container-fluid">
-  <div class="col-6">
+  <div class="col-8">
     <table class="table">
-      <thead>
-        <tr>
-          <th class="h4">Nombre Común</th>
-          <th class="h4">Tipo</th>
-          <th class="h4">Clima</th>
+      <thead class="table-dark">
+        <tr class="shadow">
+          <th scope="row" class="">#</th>
+          <th scope="row" class="">Nombre Común</th>
+          <th scope="row" class="">Tipo</th>
+          <th scope="row" class="">Clima</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let p of planta">
+        <tr class="shadow-offset-down-xl" *ngFor="let p of planta">
+          <th scope="row">
+            <dd>{{p.id}}</dd>
+          </th>
           <td>
             <dd>{{p.nombre_comun}}</dd>
           </td>
