@@ -1,25 +1,19 @@
 .container-fluid {
-  padding: 24px 0 0 97px;
+  padding: 30px 100px 85px;
 }
-
+.table {
+  font-size: 18px;
+  margin-top: 25px;
+}
 td {
   text-shadow: 1px 3px 5px #b5b5b5;
   font-weight: 600;
 }
-.table {
-  font-size: 18px;
-}
-
-img {
-  padding-left: 97px;
-}
-
 h1 {
   font-family: 'Kaisei Decol';
   font-size: 36px;
   font-weight: bold;
   text-shadow: 1px 3px 5px #b5b5b5;
-  margin-left: 97px;
   margin-bottom: 30px;
   padding: 32px 0 15px;
   border-bottom: 1px solid #E5E5E5;
