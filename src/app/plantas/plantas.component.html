@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="shadow-offset-down-xl" *ngFor="let p of planta">
+        <tr class="shadow-offset-down-xl" *ngFor="let p of plantas">
           <th scope="row">
             <dd>{{p.id}}</dd>
           </th>
@@ -26,5 +26,9 @@
       </tr>
       </tbody>
     </table>
+    <div>
+      <h4>Total Plantas Interior: {{totalInterior}}</h4>
+      <h4>Total Plantas Exterior: {{totalExterior}}</h4>
+    </div>
   </div>
 </div>
