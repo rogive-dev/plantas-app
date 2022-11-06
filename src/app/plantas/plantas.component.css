@@ -15,8 +15,20 @@ h1 {
   font-weight: bold;
   text-shadow: 1px 3px 5px #b5b5b5;
   margin-bottom: 30px;
-  padding: 32px 0 15px;
+  padding: 32px 0 20px;
   border-bottom: 1px solid #E5E5E5;
   box-shadow: 0px 1px 1px #F2F2F2;
   max-width: 1244px;
+}
+h4 {
+  font-size: 20px;
+}
+p {
+  margin-top: 133px;
+  font-weight: 500;
+  text-align: center;
+}
+
+img {
+  width: 100%;
 }
