@@ -1,35 +1,54 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
+/* tslint:disable:no-unused-variable */
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
+import { faker } from '@faker-js/faker';
 
-describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  });
+import { HttpClientModule } from '@angular/common/http';
+import { PlantasComponent } from './plantas/plantas.component';
+import { PlantasService } from './plantas/plantas.service';
+import { Planta } from './plantas/planta';
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
 
-  it(`should have as title 'parcial'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('parcial');
-  });
+describe('Componente lista de plantas', () => {
+ let component: PlantasComponent;
+ let fixture: ComponentFixture<PlantasComponent>;
+ let debug: DebugElement;
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('parcial app is running!');
-  });
+ beforeEach(async(() => {
+   TestBed.configureTestingModule({
+     imports: [HttpClientModule],
+     declarations: [ PlantasComponent ],
+     providers: [ PlantasService ]
+   })
+   .compileComponents();
+ }));
+
+ beforeEach(() => {
+   fixture = TestBed.createComponent(PlantasComponent);
+   component = fixture.componentInstance;
+
+   component.plantas = [
+     new Planta(faker.datatype.number(), faker.name.firstName(), faker.lorem.sentence(), faker.lorem.sentence()),
+     new Planta(faker.datatype.number(), faker.name.firstName(), faker.lorem.sentence(), faker.lorem.sentence()),
+     new Planta(faker.datatype.number(), faker.name.firstName(), faker.lorem.sentence(), faker.lorem.sentence())
+   ]
+
+   fixture.detectChanges();
+   debug = fixture.debugElement;
+ });
+
+ it('se ha creado', () => {
+   expect(component).toBeTruthy();
+ });
+
+ it("El componente tiene una tabla", () => {
+   expect(debug.query(By.css("tbody")).childNodes.length).toBeGreaterThan(0);
+ });
+
+ it('Debe tener un elemento tr', () => {
+  let tableRows = fixture.nativeElement.querySelectorAll('tr');
+  expect(tableRows.length).toBe(4);
+ });
+
 });
